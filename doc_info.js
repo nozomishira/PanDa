@@ -6,18 +6,17 @@ const firebaseConfig = {
     messagingSenderId: "24195856437",
     appId: "1:24195856437:web:5684860ae356a1231b997c",
     measurementId: "G-5BRYYBXDWW",
-  };
-  
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
+};
 
-  function getParam()
-{
-    var url   = location.href
-    parameters    = url.split("?")
-    params   = parameters[1].split("&")
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+function getParam() {
+    var url = location.href
+    parameters = url.split("?")
+    params = parameters[1].split("&")
     var paramsArray = []
-    for ( it = 0; it < params.length; it++ ) {
+    for (it = 0; it < params.length; it++) {
         neet = params[it].split("=")
         paramsArray.push(decodeURIComponent(neet[1]));
         paramsArray.push(decodeURIComponent(neet[2]));
@@ -37,13 +36,12 @@ const firebaseConfig = {
 
 // -------------------------------------------------------------------
 
-jQuery(function()
-{
-    
+jQuery(function () {
 
-    let database=[];
+
+    let database = [];
     let data = getParam();
-    
+
     // const snapshot = await firestore
     // .collection('doctor')
     // .where('Name','=',data[0])
@@ -53,26 +51,27 @@ jQuery(function()
     // const doc = snapshot.docs[0];
     // const data_field = doc.data();
     // console.dir(data_fiald);
-    let data_doctor=[];
+    let data_doctor = [];
     db.collection("doctor")
-    .get()
-    .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        const data1 = doc.data();
-        if(data1.Name===data[0]){
-            database.push(data1.Name);
-            database.push(data1.Sex);
-            database.push(data1.expert);
-            database.push(data1.Place);
-            database.push(data1.Hospital);
-            database.push(data1.Email);
-            database.push(data1.Doctor_Age);
-            database.push(data1.illness);
-            database.push(data1.Web);
-            database.push(data1.other);
-            ;};
-      });
-    });
+        .get()
+        .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                const data1 = doc.data();
+                if (data1.Name === data[0]) {
+                    database.push(data1.Name);
+                    database.push(data1.Sex);
+                    database.push(data1.expert);
+                    database.push(data1.Place);
+                    database.push(data1.Hospital);
+                    database.push(data1.Email);
+                    database.push(data1.Doctor_Age);
+                    database.push(data1.illness);
+                    database.push(data1.Web);
+                    database.push(data1.other);
+                    ;
+                };
+            });
+        });
 
     console.log(database);
     //console.log(data2);
@@ -95,63 +94,63 @@ jQuery(function()
     //     data_doctor[data_doc_count]=item;
     //     data_doc_count++;
     // }
-    console.log("database"+ database);
-   //if(data_doctor[0]){
+    console.log("database" + database);
+    //if(data_doctor[0]){
     $("#output2").append(`
       <p>名前：${database[0]}</p>
       `);
-   //}
-   if(database[1]){
-//console.log("True");
+    //}
+    //if(database[1]){
+    //console.log("True");
     $("#output2").append(`
     <p>性別：${database[1]}</p>
     `);
-   }
-   if(database[2]){
-    //console.log("True");
-    $("#output2").append(`
+    //}
+    if (database[2]) {
+        //console.log("True");
+        $("#output2").append(`
     <p>年齢：${database[2]}</p>
     `);
-   }
-   if(database[3]){
-    $("#output2").append(`
+    }
+    if (database[3]) {
+        $("#output2").append(`
     <p>専門領域：${database[3]}</p>
     `);
-   }
-   if(database[4]){
-    $("#output2").append(`
+    }
+    if (database[4]) {
+        $("#output2").append(`
     <p>メールアドレス：${database[4]}</p>
     `);
-   }
-   if(database[5]){
-    $("#output2").append(`
+    }
+    if (database[5]) {
+        $("#output2").append(`
     <p>都道府県：${database[5]}</p>
     `);
-   }
-   
-   if(database[6]){
-    $("#output2").append(`
+    }
+
+    if (database[6]) {
+        $("#output2").append(`
     <p>医師年数：${database[6]}</p>
     `);
-   }
-   if(database[7]){
-    $("#output2").append(`
+    }
+    if (database[7]) {
+        $("#output2").append(`
     <p>担当病気：${database[7]}</p>
     `);
-    conmouseleave.log(true);
-   }
-   if(database[8]){
-    $("#output2").append(`
+        conmouseleave.log(true);
+    }
+    if (database[8]) {
+        $("#output2").append(`
     <p>病院名：${database[8]}</p>
     `);
-    console.log(true);
-   }
-   if(database[9]){
-    $("#output2").append(`
+        console.log(true);
+    }
+    if (database[9]) {
+        $("#output2").append(`
     <p>その他一言：${database[9]}</p>
     `);
-    console.log(true);
-   }
+        console.log(true);
+    }
 
     // $("#output2").append(`
     //   <p><li>${data[0]}</li></p>
@@ -167,26 +166,27 @@ jQuery(function()
     //   <p><li>${data[10]}</li></p>`);
 
     console.log(data);
-    let comment_data=[];
-    let data_count=0;
-    const Name =data[0];
-            $(document).ready(function () {
-                  db.collection("evaluation").get().then((querySnapshot) => {
-                    querySnapshot.forEach((doc) => {
-                        const data =doc.data();
-                        if(data.Name==Name){if(data.comment){database.push(data.comment);};} 
-                    }); 
-                    for(let item of database){
-                        comment_data[data_count]=item;
-                        data_count++;
-                        if(data_count>=10)
-                        $("#output").append(`<p>${item}</P>`);
-                    }
-                    target1 = document.getElementById("doc_name");
-                    
+    let comment_data = [];
+    let data_count = 0;
+    const Name = data[0];
+    $(document).ready(function () {
+        db.collection("evaluation").get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                const data = doc.data();
+                if (data.Name == Name) { if (data.comment) { database.push(data.comment); }; }
+            });
+            for (let item of database) {
+                comment_data[data_count] = item;
+                data_count++;
+                if (data_count >= 10)
+                    $("#output").append(`<p>${item}</P>`);
+            }
+            target1 = document.getElementById("doc_name");
+
+        })
+        //$("#output").append(`<li>${database[0].Name}</li>`);
+    })
 })
-//$("#output").append(`<li>${database[0].Name}</li>`);
-})})
 
 
 
