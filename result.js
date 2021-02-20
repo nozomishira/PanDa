@@ -676,7 +676,7 @@ function onClick3(val){//医者情報ページに移動
     console.log(doc_name);
     console.log(hos_name);
 
-    var all = doc_name + ","+ hos_name;
+    //var all = encodeURIComponent(doc_name) + "="+ encodeURIComponent(hos_name);
 
 
    //window.open("evaluation.html", '_blank');
@@ -684,7 +684,7 @@ function onClick3(val){//医者情報ページに移動
 
 
 
-    location.href = '/doc_info.html?name=' +  encodeURIComponent(all);
+    location.href = '/doc_info.html?name=' + encodeURIComponent(doc_name) + "="+encodeURIComponent(hos_name);
 }
 
 function setter(tmp){
