@@ -57,7 +57,7 @@ function proc(){ //画面遷移と同時に開始
         let Name = val[0];//data1[3];
         let hospital = val[1];//data1[4]; 
         let sex = val[2] ;//data1[5];
-        let age = val[3] ;//Number(data1[6]);
+        let age = Number(val[3]) ;//Number(data1[6]);
         let Place = val[6] ;//data1[7];
         let comment = val[8] ;//data1[8];
 
@@ -81,8 +81,7 @@ function proc(){ //画面遷移と同時に開始
                 })
                 .filter(x => x.expert === expert)
                 .filter(x => sex ? x.Sex === sex : true)
-                // .filter(x => age ? ((10*age<= Number(x.Age))&&(Number(x.Age)< 10* (age+1))) : true)
-                .filter(x => age ? (( 10 * age <= x.Age ) &&( x.Age < 10 * ( age + 1 ) )) : true)
+                .filter(x => age ? (( 10 * age <= Number(x.Age) ) &&( Number(x.Age) < 10 * ( age + 1 ) )) : true)
                 .filter(x => Name ? x.Name === Name : true)
                 .filter(x => hospital ? x.Hospital === hospital : true)
                 .filter(x => Place ? x.Place === Place : true)
@@ -91,7 +90,7 @@ function proc(){ //画面遷移と同時に開始
                     (x, i, self) =>
                       self.findIndex(y => x.Name === y.Name) === i
                 )
-                .sort((a, b) => a.avgScore > b.avgScore ? 1 : -1);
+                .sort((a, b) => a.avgScore > b.avgScore ? -1 : 1);
 
                 console.log(filteredEvaluations);
                 console.log(filteredEvaluations.length);
@@ -202,7 +201,7 @@ function proc(){ //画面遷移と同時に開始
                     (x, i, self) =>
                       self.findIndex(y => x.Name === y.Name) === i
                 )
-                .sort((a, b) => a.avgScore > b.avgScore ? 1 : -1);
+                .sort((a, b) => a.avgScore > b.avgScore ? -1 : 1);
 
                 console.log(filteredEvaluations);
                 console.log("important==2");
@@ -311,7 +310,7 @@ function proc(){ //画面遷移と同時に開始
                     (x, i, self) =>
                       self.findIndex(y => x.Name === y.Name) === i
                 )
-                .sort((a, b) => a.avgScore > b.avgScore ? 1 : -1);
+                .sort((a, b) => a.avgScore > b.avgScore ? -1 : 1);
 
                 console.log(filteredEvaluations);
 
@@ -419,7 +418,7 @@ function proc(){ //画面遷移と同時に開始
                     (x, i, self) =>
                       self.findIndex(y => x.Name === y.Name) === i
                 )
-                .sort((a, b) => a.avgScore > b.avgScore ? 1 : -1);
+                .sort((a, b) => a.avgScore > b.avgScore ? -1 : 1);
 
                 console.log(filteredEvaluations);
 
