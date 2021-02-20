@@ -138,36 +138,27 @@
 
 
 
-.btnP-square-shadow {
-    position: absolute;
-    bottom: 5%;
-    left: 39%;
+.btnbtn-primary{
+    font-size: 1.2vw;
+    width:25%;
+
+    margin-left: 37.5%;    
+    margin-right: 37.5%;
+    margin-bottom: 2vh;
+    height: 4vw;
+    border:none;
+    cursor:pointer;
+    line-height:1;
+    background: #668ad8;
+    color:white;
+    border-radius: 5px;
+    border-width: thin;
+    border-style: double;
+    border-color:#445c91;
     
-    margin:0;
-    padding:0;
-    
-    display: inline-block;
-    padding: 0.5em 1em;
-    text-decoration: none;
-    background: #668ad8;/*ボタン色*/
-    color: #FFF;
-    border-bottom: solid 4px #627295;
-    border-radius: 3px;
+  
+}
 
-    height: 80px;
-    width: 300px;
-    text-align: center;
-    display: table-cell;
-    vertical-align: middle;
-    font-size: 30px;
-
-  }
-  .btnP-square-shadow:active {
-    /*ボタンを押したとき*/
-
-    -webkit-transform: translateY(4px);
-    transform: translateY(4px);/*下に動く*/
-    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
-    border-bottom: none;
-
-  }
+.btnbtn-primary:hover{
+    background: #506491;
+}

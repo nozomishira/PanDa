@@ -95,20 +95,32 @@ function proc(){ //画面遷移と同時に開始
 
                 console.log(filteredEvaluations);
                 console.log(filteredEvaluations.length);
-                console.log(filteredEvaluations[0].Name);
-                    
+
 
                 console.log("important==1");
 
-                var document_data = [[]];
+                if(filteredEvaluations.length==0){
+                    target1 = document.getElementById("doc_name");
+                    target2 = document.getElementById("hos_name");
+                    target3 = document.getElementById("exp_name");
+                    target1.innerText="該当なし";
+                    target2.innerText="該当なし";
+                    target3.innerText="該当なし";
 
-                for(let i=0 ; i<filteredEvaluations.length;i++){
-                    document_data.push(filteredEvaluations[i].Name,
-                        filteredEvaluations[i].Hospital,filteredEvaluations[i].expert);
                 }
+                    
+                if(filteredEvaluations.length!=0){
                 
-                console.log(document_data);
-                console.log(document_data[1]);
+
+                    var document_data = [[]];
+
+                    for(let i=0 ; i<filteredEvaluations.length;i++){
+                        document_data.push(filteredEvaluations[i].Name,
+                            filteredEvaluations[i].Hospital,filteredEvaluations[i].expert);
+                    }
+                    
+                    console.log(document_data);
+                    console.log(document_data[1]);
 
 
             
@@ -152,7 +164,7 @@ function proc(){ //画面遷移と同時に開始
             
                     }
 
-
+                }
                 
 
                
@@ -195,15 +207,27 @@ function proc(){ //画面遷移と同時に開始
                 console.log(filteredEvaluations);
                 console.log("important==2");
 
-                var document_data = [[]];
+                if(filteredEvaluations.length==0){
+                    target1 = document.getElementById("doc_name");
+                    target2 = document.getElementById("hos_name");
+                    target3 = document.getElementById("exp_name");
+                    target1.innerText="該当なし";
+                    target2.innerText="該当なし";
+                    target3.innerText="該当なし";
 
-                for(let i=0 ; i<filteredEvaluations.length;i++){
-                    document_data.push(filteredEvaluations[i].Name,
-                        filteredEvaluations[i].Hospital,filteredEvaluations[i].expert);
                 }
-                
-                console.log(document_data);
-                console.log(document_data[1]);
+
+                if(filteredEvaluations.length!=0){
+
+                    var document_data = [[]];
+
+                    for(let i=0 ; i<filteredEvaluations.length;i++){
+                        document_data.push(filteredEvaluations[i].Name,
+                            filteredEvaluations[i].Hospital,filteredEvaluations[i].expert);
+                    }
+                    
+                    console.log(document_data);
+                    console.log(document_data[1]);
 
 
             
@@ -246,6 +270,8 @@ function proc(){ //画面遷移と同時に開始
             
             
                     }
+                
+                }
 
 
 
@@ -293,15 +319,28 @@ function proc(){ //画面遷移と同時に開始
                 document_data = filteredEvaluations;
                 console.log("important==3");
 
-                var document_data = [[]];
+                if(filteredEvaluations.length==0){
+                    target1 = document.getElementById("doc_name");
+                    target2 = document.getElementById("hos_name");
+                    target3 = document.getElementById("exp_name");
+                    target1.innerText="該当なし";
+                    target2.innerText="該当なし";
+                    target3.innerText="該当なし";
 
-                for(let i=0 ; i<filteredEvaluations.length;i++){
-                    document_data.push(filteredEvaluations[i].Name,
-                        filteredEvaluations[i].Hospital,filteredEvaluations[i].expert);
                 }
-                
-                console.log(document_data);
-                console.log(document_data[1]);
+
+
+                if(filteredEvaluations.length!=0){
+
+                    var document_data = [[]];
+
+                    for(let i=0 ; i<filteredEvaluations.length;i++){
+                        document_data.push(filteredEvaluations[i].Name,
+                            filteredEvaluations[i].Hospital,filteredEvaluations[i].expert);
+                    }
+                    
+                    console.log(document_data);
+                    console.log(document_data[1]);
 
 
             
@@ -345,7 +384,7 @@ function proc(){ //画面遷移と同時に開始
             
                     }
 
-
+                }
                 
                 for(let l of filteredEvaluations){
                     $("#output").append(`<li>${l.Name}${l.Sex}${l.Age}${l.expert}${l.Email}${l.Place}${l.Doctor_Age}${l.illness}${l.Hospital}${l.web}${l.other}
@@ -386,15 +425,27 @@ function proc(){ //画面遷移と同時に開始
 
                 console.log("important==4");
 
-                var document_data = [[]];
+                if(filteredEvaluations.length==0){
+                    target1 = document.getElementById("doc_name");
+                    target2 = document.getElementById("hos_name");
+                    target3 = document.getElementById("exp_name");
+                    target1.innerText="該当なし";
+                    target2.innerText="該当なし";
+                    target3.innerText="該当なし";
 
-                for(let i=0 ; i<filteredEvaluations.length;i++){
-                    document_data.push(filteredEvaluations[i].Name,
-                        filteredEvaluations[i].Hospital,filteredEvaluations[i].expert);
                 }
-                
-                console.log(document_data);
-                console.log(document_data[1]);
+
+                if(filteredEvaluations.length!=0){
+
+                    var document_data = [[]];
+
+                    for(let i=0 ; i<filteredEvaluations.length;i++){
+                        document_data.push(filteredEvaluations[i].Name,
+                            filteredEvaluations[i].Hospital,filteredEvaluations[i].expert);
+                    }
+                    
+                    console.log(document_data);
+                    console.log(document_data[1]);
 
 
             
@@ -437,6 +488,7 @@ function proc(){ //画面遷移と同時に開始
             
             
                     }
+                }
 
                
                 for(let l of filteredEvaluations){
@@ -628,12 +680,12 @@ function onClick1(val){//診察予約ページに移動
     console.log("val="+val);
     //ソート済みデータを取得
     //var doc_data = getDocData();
-    var access = doc_data[val][3];
+    var access = "https://fdoc.jp/";
 
 
    
-    window.open("evaluation.html", '_blank');
-    //window.location.href = access;
+    //window.open("evaluation.html", '_blank');
+    window.location.href = access;
 }
 
 function onClick2(val){//医者評価ページに移動
