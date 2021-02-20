@@ -1,0 +1,102 @@
+.navbar-brand{
+    padding-left: 10px;
+}
+
+
+
+.navi {
+    background-image: url("../img/Stethoscope.jpg");
+    background-size: cover;
+    background-position: center 60%;
+    background-color:#d8d8d8b3;
+    background-blend-mode:lighten;
+    height: 40Vh;
+}
+
+.navi h1{
+    color: #000;
+    font-size: 6vh;
+    font-weight: 400;
+    padding-top: 7vh;
+    padding-left: 30vh;
+}
+.lead1{
+    color: #000;
+    font-size: 2.5vh;
+    font-weight: normal;
+    padding-top: 5vh;
+    padding-left: 30vh;
+}
+.lead2{
+    color: #000;
+    font-weight: normal;
+    font-size: 2.5vh;
+    padding-top: 10px;
+    padding-left: 30vh;
+    padding-bottom: 5vh;
+}
+
+
+
+.main{
+    position: relative;
+    background-color: #adccd3;
+    padding-top:8vh;
+    padding-bottom: 8vh;
+}
+.contents{
+
+    margin-left: 28vh;
+    margin-right: 28vh;
+    padding: 1em 2em;
+    
+    font-weight: bold;
+    color: #000;/*文字色*/
+    /*background-color:#E3F2FD;*/
+    background-color: #fff;
+    
+    border: solid 2px #33547c;/*線*/
+    border-radius: 10px;/*角の丸み*/
+    
+    
+}
+
+.contents p{
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.cp_iptxt {
+	position: relative;
+    display: inline;
+	width: 80%;
+    
+	
+    
+}
+.cp_iptxt input[type='text'] {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0.3em;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	color: #aaaaaa;
+	border: 1px solid #1b2538;
+	border-radius: 4px;
+    background: #e5e9ec;
+}
+
+.ef {
+    display: inline-block;
+}
+
+
+.ef input[type='text']:focus {
+    color: rgb(9, 44, 33);
+	border: 1px solid #9dbbe9;
+	outline: none;
+	box-shadow: 0 0 5px 1px rgba(14, 17, 173, 0.5);
+    background: #b8d0eb;
+}
+

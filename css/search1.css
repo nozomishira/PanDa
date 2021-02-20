@@ -1,0 +1,180 @@
+body{
+    position: relative;
+    background-image: url("../img/Stethoscope.jpg");
+    background-position-x: 50%;
+}
+
+.navbar-brand{
+    padding-left: 10px;
+}
+
+
+
+.navi {
+     
+    height: 30Vh;   
+    
+}
+
+.navi h1{
+    color: #000;
+    font-size: 7vh;
+    font-weight: 400;
+    padding-top: 7vh;
+    margin-left: 15%;
+    text-decoration: underline;
+}
+.lead1{
+    color: #000;
+    font-size: 2.5vh;
+    font-weight: normal;
+    padding-top: 5vh;
+    margin-left: 15%;
+}
+.lead2{
+    color: #000;
+    font-weight: normal;
+    font-size: 2.5vh;
+    padding-top: 10px;
+    padding-bottom: 5vh;
+    margin-left: 15%;
+    
+}
+
+
+
+.main{
+    position: relative;
+    padding-top:8vh;
+    padding-bottom: 8vh;  
+    background-size: cover;
+    background-position: center 60%;
+    background-blend-mode:lighten;
+    height: 100%;
+    
+}
+
+
+.contents{
+
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 2% 3%;
+    
+    font-weight: bold;
+    color: #000;/*文字色*/
+    /*background-color:#E3F2FD;*/
+    background: rgba(255,255,255,0.8);
+    
+    border: solid 1px #33547c;/*線*/
+    border-radius: 10px;/*角の丸み*/
+    opacity: 1;
+    
+    
+}
+
+.contents p{
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.cp_iptxt {
+	position: relative;
+    opacity: 1;
+    
+}
+.cp_iptxt input[type='text'] {
+           
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 70%;
+    height: 5vh;
+	padding: 0.3em;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	color: #aaaaaa;
+	border: 1px solid #1b2538;
+	border-radius: 4px;
+    background: #e5e9ec;
+}
+
+.cp_iptxt input[type='text']:focus {
+    color: rgb(9, 44, 33);
+	border: 1px solid #9dbbe9;
+	outline: none;
+	box-shadow: 0 0 5px 1px rgba(14, 17, 173, 0.5);
+    background: #b8d0eb;
+}
+
+.ef {
+    display: inline-block;
+    width: 100%;
+    
+}
+.ef p{
+    float: left;
+    font-size: 20px;
+    width: 24%;
+    line-height: 5vh;
+    vertical-align: middle;
+    margin-left: 2%;
+}
+
+.selecter{
+    font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 70%;
+    height: 5vh;
+	padding: 0.3em;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	color: #aaaaaa;
+	border: 1px solid #1b2538;
+	border-radius: 4px;
+    background: #e5e9ec;
+}
+.selecter:focus {
+    color: rgb(9, 44, 33);
+	border: 1px solid #9dbbe9;
+	outline: none;
+	box-shadow: 0 0 5px 1px rgba(14, 17, 173, 0.5);
+    background: #b8d0eb;
+}
+
+
+
+.btnP-square-shadow {
+    position: absolute;
+    bottom: 5%;
+    left: 39%;
+    
+    margin:0;
+    padding:0;
+    
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+
+    height: 80px;
+    width: 300px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 30px;
+
+  }
+  .btnP-square-shadow:active {
+    /*ボタンを押したとき*/
+
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: none;
+
+  }
+
+
