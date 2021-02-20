@@ -1,17 +1,21 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
-    <link href="css/docter_resister.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/result.css">
-    <title>医者詳細情報</title>
-  </head>
-  <body>
-    <!-- <header class="page-header wrapper" >
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+  <link href="css/docter_resister.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/result.css">
+  <title>医者詳細情報</title>
+</head>
+
+<body>
+  <!-- <header class="page-header wrapper" >
       <h1><a class="navbar-brand" href="#">ぱんだ-PanDa-</a></h1>
       <nav>
          <ul class="main-nav">
@@ -21,12 +25,13 @@
          </ul>
       </nav>
    </header> -->
-   <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
+  <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
     <div class="my-box">
       <a class="navbar-brand" href="#">ぱんだ-PanDa-</a>
     </div>
-    
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -38,47 +43,52 @@
     </div>
   </nav>
 
-   <div class="detail">
+  <div class="detail">
     <h1>医者の情報</h1>
-    
+
     <h2>基本情報</h2>
     <div class=base_info>
-    <div class="doctor_info">
-    <div class = "doctor_pic">
-      <image  src="./img/aaa.jpg" width="350" height="350"></image>
-    </div>
-    <p id="output2"></p>
-    </div>
+      <div class="doctor_info">
+        <div class="doctor_pic">
+          <image src="./img/aaa.jpg" width="350" height="350"></image>
+        </div>
+        <p id="output2"></p>
+      </div>
     </div>
     <h2>一言コメント</h2>
     <div class="doctor_comment">
-    <p id="output"></p>
-   </div>
-    
-        <button class="btn btn-primary" onclick="history.back()">戻る</button>
-    
-  </div><!--wrapper-->
-  
+      <p id="output"></p>
+    </div>
+
+    <button class="btn btn-primary" onclick="history.back()">戻る</button>
+
+  </div>
+  <!--wrapper-->
+
   <footer>
     <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
       <div class="my-box">
         <a class="navbar-brand" href="#">Fujitsu Team-A</a>
       </div>
-      
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          
+
         </div>
       </div>
     </nav>
- </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-firestore.js"></script> 
-    <script src="index7.js"></script>
-  </body>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-firestore.js"></script>
+  <script src="doc_info.js"></script>
+</body>
+
 </html>

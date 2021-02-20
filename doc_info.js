@@ -21,15 +21,16 @@ const firebaseConfig = {
         neet = params[it].split("=")
         paramsArray.push(decodeURIComponent(neet[1]));
         paramsArray.push(decodeURIComponent(neet[2]));
-        paramsArray.push(decodeURIComponent(neet[3]));
-        paramsArray.push(decodeURIComponent(neet[4]));
-        paramsArray.push(decodeURIComponent(neet[5]));
-        paramsArray.push(decodeURIComponent(neet[6]));
-        paramsArray.push(decodeURIComponent(neet[7]));
-        paramsArray.push(decodeURIComponent(neet[8]));
-        paramsArray.push(decodeURIComponent(neet[9]));
-        paramsArray.push(decodeURIComponent(neet[10]));
-        paramsArray.push(decodeURIComponent(neet[11]));
+        //paramsArray.push(decodeURIComponent(neet[2]));
+        //paramsArray.push(decodeURIComponent(neet[3]));
+        // paramsArray.push(decodeURIComponent(neet[4]));
+        // paramsArray.push(decodeURIComponent(neet[5]));
+        // paramsArray.push(decodeURIComponent(neet[6]));
+        // paramsArray.push(decodeURIComponent(neet[7]));
+        // paramsArray.push(decodeURIComponent(neet[8]));
+        // paramsArray.push(decodeURIComponent(neet[9]));
+        // paramsArray.push(decodeURIComponent(neet[10]));
+        // paramsArray.push(decodeURIComponent(neet[11]));
     }
     return paramsArray
 }
@@ -38,87 +39,118 @@ const firebaseConfig = {
 
 jQuery(function()
 {
-//     const snapshot = await firestore
-//     .collection('doctor')
-//     .where()
-//     .select('Age', 'Doctor_Age','Email','Hospital',
-//              'Name','Place','Sex','Web',"expert","illness","other")
-//     .get();
-//   const doc = snapshot.docs[0];
-//   const data_field = doc.data();
-//   console.dir(data_fiald);
+    
 
     let database=[];
     let data = getParam();
-    let field_name;
-    let view_Data=[];
+    
+    // const snapshot = await firestore
+    // .collection('doctor')
+    // .where('Name','=',data[0])
+    // .select('Age', 'Doctor_Age','Email','Hospital',
+    //          'Name','Place','Sex','Web',"expert","illness","other")
+    // .get();
+    // const doc = snapshot.docs[0];
+    // const data_field = doc.data();
+    // console.dir(data_fiald);
+    let data_doctor=[];
+    db.collection("doctor")
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        const data1 = doc.data();
+        if(data1.Name===data[0]){
+            database.push(data1.Name);
+            database.push(data1.Sex);
+            database.push(data1.expert);
+            database.push(data1.Place);
+            database.push(data1.Hospital);
+            database.push(data1.Email);
+            database.push(data1.Doctor_Age);
+            database.push(data1.illness);
+            database.push(data1.Web);
+            database.push(data1.other);
+            ;};
+      });
+    });
+
+    console.log(database);
+    //console.log(data2);
+    // let field_name;
+    // let view_Data=[];
     // let null_data=[];
     // let null_data_count=0;
     //let visible_item_count=0;
-    for(let i = 0;i<data.length;i++){
-        if(data[i]=="undefined"||data[i]==" "){
-             data[i]="";
-             //view_Data.push(data[i]);
-          }else{
-           // visible_item_count++;
-            view_Data.push(data[i]);
-          }
-    }
-
-   if(data[0]){
+    // for(let i = 0;i<data.length;i++){
+    //     if(data[i]=="undefined"||data[i]==" "){
+    //          data[i]="";
+    //          //view_Data.push(data[i]);
+    //       }else{
+    //        // visible_item_count++;
+    //         view_Data.push(data[i]);
+    //       }
+    // }
+    // let data_doc_count=0;
+    // for(let item of database){
+    //     data_doctor[data_doc_count]=item;
+    //     data_doc_count++;
+    // }
+    console.log("database"+ database);
+   //if(data_doctor[0]){
     $("#output2").append(`
-      <p>名前：${data[0]}</p>
+      <p>名前：${database[0]}</p>
       `);
-   }
-   if(data[1]){
+   //}
+   if(database[1]){
+//console.log("True");
     $("#output2").append(`
-    <p>性別：${data[1]}</p>
+    <p>性別：${database[1]}</p>
     `);
    }
-   if(data[2]){
+   if(database[2]){
+    //console.log("True");
     $("#output2").append(`
-    <p>年齢：${data[2]}</p>
+    <p>年齢：${database[2]}</p>
     `);
    }
-   if(data[3]){
+   if(database[3]){
     $("#output2").append(`
-    <p>専門領域：${data[3]}</p>
+    <p>専門領域：${database[3]}</p>
     `);
    }
-   if(data[4]){
+   if(database[4]){
     $("#output2").append(`
-    <p>メールアドレス：${data[4]}</p>
+    <p>メールアドレス：${database[4]}</p>
     `);
    }
-   if(data[5]){
+   if(database[5]){
     $("#output2").append(`
-    <p>都道府県：${data[5]}</p>
+    <p>都道府県：${database[5]}</p>
     `);
    }
-   if(data[5]){
+   
+   if(database[6]){
     $("#output2").append(`
-    <p>都道府県：${data[5]}</p>
+    <p>医師年数：${database[6]}</p>
     `);
    }
-   if(data[6]){
+   if(database[7]){
     $("#output2").append(`
-    <p>医師年数：${data[6]}</p>
+    <p>担当病気：${database[7]}</p>
     `);
+    conmouseleave.log(true);
    }
-   if(data[7]){
+   if(database[8]){
     $("#output2").append(`
-    <p>担当病気：${data[7]}</p>
+    <p>病院名：${database[8]}</p>
     `);
+    console.log(true);
    }
-   if(data[8]){
+   if(database[9]){
     $("#output2").append(`
-    <p>病院名：${data[8]}</p>
+    <p>その他一言：${database[9]}</p>
     `);
-   }
-   if(data[9]){
-    $("#output2").append(`
-    <p>その他一言：${data[9]}</p>
-    `);
+    console.log(true);
    }
 
     // $("#output2").append(`
@@ -147,6 +179,7 @@ jQuery(function()
                     for(let item of database){
                         comment_data[data_count]=item;
                         data_count++;
+                        if(data_count>=10)
                         $("#output").append(`<p>${item}</P>`);
                     }
                     target1 = document.getElementById("doc_name");
