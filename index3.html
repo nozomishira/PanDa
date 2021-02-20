@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link href="css/docter_resister.css" rel="stylesheet">
+    <title>登録する</title>
+  </head>
+  <body>
+    <div id="contact" class="big-bg">
+      <header class="page-header wrapper" >
+              <h1><a class="navbar-brand" href="index.html">ぱんだ-PanDa-</a></h1>
+              <nav>
+                  <ul class="main-nav">
+                     <li><a type = "reset" href="index.html">Home</a></li>
+                     <li><a href="index3.html">登録内容の更新</a></li>
+                     <li><a type = "reset" href="index3.html">リセット</a></li>
+                  </ul>
+              </nav>
+      </header>
+    <div class="wrapper">
+      <h2 class="page-title">医師情報登録</h2>
+      <form action="" method="POST" class ="form"></form>
+      <section class = "quetion-secetion wrapper">
+       <div class = "qestion">
+        <div>
+          <label for="Name">名前*</label>
+          <input  id="Name" type="text" name="yourname">
+        </div>
+        <div>
+          <label for="Sex">性別*</label>
+          <select id="Sex">
+            <option value="" selected>性別</option>>
+            <option value="男性">男性</option>
+            <option value="女性">女性</option>
+          </select>
+        </div>
+        <div>
+          <label for="Age">年齢*</label>
+          <input  id="Age" type="text">
+        </div>
+        <div>
+          <label for="expert">専門領域*</label>
+          <select id="expert">
+            <option value="" selected>専門領域選択</option>
+            <option value="内科">内科</option>
+            <option value="外科">外科</option>
+            <option value="産婦人科">産婦人科</option>
+            <option value="小児科">小児科</option>
+            <option value="眼科・耳鼻咽喉科・皮膚科・アレルギー科">眼科・耳鼻咽喉科・皮膚科・アレルギー科</option>
+            <option value="肛門科・泌尿器科・性感染症科">肛門科・泌尿器科・性感染症科</option>
+            <option value="精神科">精神科</option>
+            <option value="美容系">美容系</option>
+            <option value="歯科">歯科</option>
+          </select>
+        </div>
+        <div>
+          <label for="Hospita">所属病院名*</label>
+          <input  id="Hospital" type="text" name="Hospital">
+        </div>
+       </div><!-- </div> class="queation" -->
+　　　　<!-- 二列目 -->
+       <div class = "qestion_2row">
+         <div>
+           <label for="Email">メールアドレス*</label>
+           <input  id="Email" type="text" name="email">
+         </div>
+         <div>
+           <label for="Place">都道府県*</label>
+           <select id="Place">
+            <option value="" selected>都道府県</option>
+            <option value="北海道">北海道</option>
+            <option value="青森県">青森県</option>
+            <option value="岩手県">岩手県</option>
+            <option value="宮城県">宮城県</option>
+            <option value="秋田県">秋田県</option>
+            <option value="山形県">山形県</option>
+            <option value="福島県">福島県</option>
+            <option value="茨城県">茨城県</option>
+            <option value="栃木県">栃木県</option>
+            <option value="群馬県">群馬県</option>
+            <option value="埼玉県">埼玉県</option>
+            <option value="千葉県">千葉県</option>
+            <option value="東京都">東京都</option>
+            <option value="神奈川県">神奈川県</option>
+            <option value="新潟県">新潟県</option>
+            <option value="富山県">富山県</option>
+            <option value="石川県">石川県</option>
+            <option value="福井県">福井県</option>
+            <option value="山梨県">山梨県</option>
+            <option value="長野県">長野県</option>
+            <option value="岐阜県">岐阜県</option>
+            <option value="静岡県">静岡県</option>
+            <option value="愛知県">愛知県</option>
+            <option value="三重県">三重県</option>
+            <option value="滋賀県">滋賀県</option>
+            <option value="京都府">京都府</option>
+            <option value="大阪府">大阪府</option>
+            <option value="兵庫県">兵庫県</option>
+            <option value="奈良県">奈良県</option>
+            <option value="和歌山県">和歌山県</option>
+            <option value="鳥取県">鳥取県</option>
+            <option value="島根県">島根県</option>
+            <option value="岡山県">岡山県</option>
+            <option value="広島県">広島県</option>
+            <option value="山口県">山口県</option>
+            <option value="徳島県">徳島県</option>
+            <option value="香川県">香川県</option>
+            <option value="愛媛県">愛媛県</option>
+            <option value="高知県">高知県</option>
+            <option value="福岡県">福岡県</option>
+            <option value="佐賀県">佐賀県</option>
+            <option value="長崎県">長崎県</option>
+            <option value="熊本県">熊本県</option>
+            <option value="大分県">大分県</option>
+            <option value="宮崎県">宮崎県</option>
+            <option value="鹿児島県">鹿児島県</option>
+            <option value="沖縄県">沖縄県</option>
+           </select>
+         </div>
+         <div>
+           <label for="Doctor_Age">医師年数*</label>
+           <input  id="Doctor_Age" type="text">
+         </div>
+         <div>
+            <label for="illness">診断可能な病気*</label>
+            <input  id="illness" type="text">
+         </div>
+         <div>
+          <label for="Web">Webサイト等のリンク(任意)</label>
+          <input  id="Web" type="text" name="Web">
+        </div>
+        </div><!-- </div> class="queation" -->
+       </section>
+        <p></p>
+        <div>
+          <label for="other" class="PR">その他アピール(任意)</label>
+          <textarea id = "other" name = "other" cols="20" rows="20" placeholder="自己PRを入力"></textarea>
+        </div>
+      </div>
+        <p></p>
+        <button id="button" type="button" class="btnbtn-primary">登録</button>
+    </form>
+  </div><!-- </div><wrapper> -->
+    <!-- <p></p> 
+    <p>
+      <input type="button" value="戻る" class="btn btn-primary" onClick="location.href='home.html'">
+    </p> -->
+<!-- 以下footer -->
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
+      <div class="my-box">
+        <a class="navbar-brand" href="#">PANDA</a>
+      </div>
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          
+        </div>
+      </div>
+    </nav>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-firestore.js"></script>
+    <script src="index3.js"></script>
+  </body>
+</html>
+
