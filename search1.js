@@ -6,7 +6,6 @@ function onButtonClick() {
   //console.log(target1.innerText);
   //location.href = `/result.html?name=${encodeURIComponent(document.forms.id_form1.id_textBox1.value)}`;
 
-
   //各入力値を取得
   var val1 = document.forms.form1.doc_name.value;
   var val2 = document.forms.form1.hos_name.value;
@@ -16,7 +15,6 @@ function onButtonClick() {
   var val6 = document.getElementById("expert").value;
   var val7 = document.getElementById("pref").value;
   var val8 = document.forms.form1.comment.value;
-  var val9 = document.forms.form1.hashtag.value;
   var val10 = document.getElementById("essential").value;
 
   /*
@@ -35,8 +33,24 @@ function onButtonClick() {
   }
   */
 
-  var all = val1 + "," + val2 + "," + val3 + "," + val4 + "," + val5
-    + "," + val6 + "," + val7 + "," + val8 + "," + val9 + "," + val10;
+  var all =
+    val1 +
+    "," +
+    val2 +
+    "," +
+    val3 +
+    "," +
+    val4 +
+    "," +
+    val5 +
+    "," +
+    val6 +
+    "," +
+    val7 +
+    "," +
+    val8 +
+    "," +
+    val10;
 
   console.log(all);
   console.log(val1);
@@ -47,14 +61,16 @@ function onButtonClick() {
   console.log(val6);
   console.log(val7);
   console.log(val8);
-  console.log(val9);
   console.log(val10);
 
-  location.href = '/result.html?name=' + encodeURIComponent(all);
+  // if (!val6 || !val10) {
+  //   alert("「専門の診療分野」と「重視したい点」は必須の選択項目です");
+  //   return;
+  // }
 
+  location.href = "/result.html?name=" + encodeURIComponent(all);
 
   //location.href = `/result.html?name=${encodeURIComponent("福間,愛富,太郎,次郎,三郎")}`;
   //window.open("../result.html", '_blank');
   //target.innerText = document.id_form1.id_textBox1.value;//これでもOK
 }
-
