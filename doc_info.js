@@ -12,10 +12,10 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 $(document).ready(async function () {
-  console.log(location.hash)
+  console.log(location.hash);
   const doctorId = decodeURI(location.hash.slice(1));
   console.log(doctorId);
-  const doctorRef = await db.collection("doctor").doc(doctorId).get()
+  const doctorRef = await db.collection("doctor").doc(doctorId).get();
   const doctor = doctorRef.data();
   console.log(doctor);
 
@@ -30,59 +30,21 @@ $(document).ready(async function () {
   $(".web").text(`名前：${doctor.web}`);
   $(".other").text(`その他：${doctor.other}`);
 
+  console.log(doctorId);
+
+  const querySnapshot = await db
+    .collection("evaluation")
+    .where("doctor_id", "==", doctorId)
+    .get();
+
+  const evaluations = querySnapshot.docs.map((doc) => ({
+    ...doc.data(),
+    id: doc.id,
+  }));
+
+  console.log(evaluations);
+
+  evaluations.forEach((x) => {
+    $(".comment").append(`<li class="list-group-item">${x.comment}</li>`);
+  });
 });
-
-// -------------------------------------------------------------------
-
-// jQuery(async function () {
-
-
-//   let database = [];
-//   let data = getParam();
-
-//   let data_doctor = [];
-
-//   const snapShot = await db.collection("doctor").where("Name", "==", data[0]).get()
-
-//   db.collection("doctor")
-//     .get()
-//     .then((querySnapshot) => {
-//       querySnapshot.forEach((doc) => {
-//         const data1 = doc.data();
-//         if (data1.Name === data[0]) {
-//           database.push(data1.Name);
-//           database.push(data1.Sex);
-//           database.push(data1.expert);
-//           database.push(data1.Place);
-//           database.push(data1.Hospital);
-//           database.push(data1.Email);
-//           database.push(data1.Doctor_Age);
-//           database.push(data1.illness);
-//           database.push(data1.Web);
-//           database.push(data1.other);
-//           ;
-//         };
-//       });
-//     });
-
-//   console.log(data);
-//   let comment_data = [];
-//   let data_count = 0;
-//   const Name = data[0];
-//   $(document).ready(function () {
-//     db.collection("evaluation").get().then((querySnapshot) => {
-//       querySnapshot.forEach((doc) => {
-//         const data = doc.data();
-//         if (data.Name == Name) { if (data.comment) { database.push(data.comment); }; }
-//       });
-//       for (let item of database) {
-//         comment_data[data_count] = item;
-//         data_count++;
-//         if (data_count >= 10)
-//           $("#output").append(`<p>${item}</P>`);
-//       }
-//       target1 = document.getElementById("doc_name");
-//     })
-//     //$("#output").append(`<li>${database[0].Name}</li>`);
-//   })
-// })
