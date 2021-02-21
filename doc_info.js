@@ -52,6 +52,7 @@ jQuery(function () {
     // const data_field = doc.data();
     // console.dir(data_fiald);
     let data_doctor = [];
+
     db.collection("doctor")
         .get()
         .then((querySnapshot) => {
@@ -59,6 +60,7 @@ jQuery(function () {
                 const data1 = doc.data();
                 if (data1.Name === data[0]) {
                     database.push(data1.Name);
+                    console.log(database[0]);
                     database.push(data1.Sex);
                     database.push(data1.expert);
                     database.push(data1.Place);
@@ -151,6 +153,8 @@ jQuery(function () {
     `);
         console.log(true);
     }
+
+
 
     // $("#output2").append(`
     //   <p><li>${data[0]}</li></p>
