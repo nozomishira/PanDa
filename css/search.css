@@ -2,8 +2,6 @@
     padding-left: 10px;
 }
 
-
-
 .navi {
     background-image: url("../img/Stethoscope.jpg");
     background-size: cover;
@@ -15,14 +13,14 @@
 
 .navi h1{
     color: #000;
-    font-size: 6vh;
+    font-size: 2vh;
     font-weight: 400;
     padding-top: 7vh;
     padding-left: 30vh;
 }
 .lead1{
     color: #000;
-    font-size: 2.5vh;
+    font-size: 1.5vh;
     font-weight: normal;
     padding-top: 5vh;
     padding-left: 30vh;
@@ -30,13 +28,11 @@
 .lead2{
     color: #000;
     font-weight: normal;
-    font-size: 2.5vh;
+    font-size: 1.5vh;
     padding-top: 10px;
     padding-left: 30vh;
     padding-bottom: 5vh;
 }
-
-
 
 .main{
     position: relative;

@@ -12,7 +12,6 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 $(document).ready(async function () {
-  console.log(location.hash);
   const doctorId = decodeURI(location.hash.slice(1));
   console.log(doctorId);
   const doctorRef = await db.collection("doctor").doc(doctorId).get();

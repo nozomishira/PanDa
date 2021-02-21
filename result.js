@@ -33,13 +33,13 @@ $(document).ready(async function () {
   console.log("ハッシュタグ：" + val[8]);
   console.log("重視したい点：" + val[9]);
 
-  let expert = val[5]; //data1[1];
-  let Name = val[0]; //data1[3];
-  let hospital = val[1]; //data1[4];
-  let sex = val[2]; //data1[5];
-  let age = val[3]; //Number(data1[6]);
-  let Place = val[6]; //data1[7];
-  let comment = val[8]; //data1[8];
+  let expert = val[5];
+  let Name = val[0];
+  let hospital = val[1];
+  let sex = val[2];
+  let age = val[3];
+  let Place = val[6];
+  let comment = val[8];
 
   const querySnapshot = await db.collection("evaluation").get();
   const evaluations = querySnapshot.docs.map((doc) => ({
@@ -82,17 +82,40 @@ $(document).ready(async function () {
   console.log(filteredEvaluations);
 
   filteredEvaluations.forEach((x, i) => {
+    $("#doctor_list").append(`
+      <tr>
+        <th scope="row">${i + 1}</th>
+        <td>${x.Name}</td>
+        <td>${x.Hospital}</td>
+        <td>${x.expert}</td>
+        <td>
+          <a value="0" id="button" type="button" class="btn btn-primary" href="/evaluation.html#${
+            x.doctor_id
+          }">診察評価</a>
+        </td>
+        <td>
+          <a value="0" id="button" type="button" class="btn btn-primary" href="/doc_info.html#${
+            x.doctor_id
+          }">医師情報</a>
+        </td>
+      </tr>
+    `);
+  });
+
+  filteredEvaluations.forEach((x, i) => {
     $("#doc_list").append(`
                 <div id="doc_item">
                     <div class="num">${i + 1}</div>
                     <div class="bottom">
-                    <p id="doc_name">${x.Name}</p>
-                    <p id="hos_name">${x.Hospital}</p>
-                    <p id="exp_name">${x.expert}</p>
+                      <p>${x.Name}</p>
+                      <p>${x.Hospital}</p>
+                      <p>${x.expert}</p>
                 </div>
                 <div class="btn1">
-                    <button value="0" id="button" type="button" class="btnbtn-primary" onclick="onClick1(value)">診察予約</button>
-                    <button value="0" id="button" type="button" class="btnbtn-primary" onclick="onClick2(value)">診察評価</button>
+                    <a value="0" id="button" type="button" class="btn btn-primary" href="/evaluation.html">診察予約</a>
+                    <a value="0" id="button" type="button" class="btn btn-primary" href="/evaluation.html#${
+                      x.doctor_id
+                    }">診察評価</a>
                     <a value="0" id="button" type="button" class="btn btn-primary" href="/doc_info.html#${
                       x.doctor_id
                     }">医師情報</a>
@@ -100,36 +123,4 @@ $(document).ready(async function () {
             </div>
             `);
   });
-
-  function onClick1(val) {
-    //診察予約ページに移動
-    console.log("val=" + val);
-    //ソート済みデータを取得
-    //var doc_data = getDocData();
-    var access = doc_data[val][3];
-    window.open("evaluation.html", "_blank");
-    //window.location.href = access;
-  }
-
-  function onClick2(val) {
-    //医者評価ページに移動
-    //console.log(val)
-    //var all = doc_data[val][0] + ","+ doc_data[val][1];//医者の名前と病院名
-    console.log("val=" + val);
-    // 要素への参照を取得
-    var content_area = document.getElementById("content_area" + val);
-    var p_element = content_area.querySelectorAll("p");
-    // コンソールにテキストを表示
-    console.log(p_element);
-
-    var doc_name = content_area.querySelectorAll("p")[7].innerText; //医師名
-    var hos_name = content_area.querySelectorAll("p")[8].innerText; //病院名
-
-    console.log(doc_name);
-    console.log(hos_name);
-
-    var all = doc_name + "," + hos_name;
-    //window.open("evaluation.html", '_blank');
-    location.href = "/evaluation.html?name=" + encodeURIComponent(all);
-  }
 });

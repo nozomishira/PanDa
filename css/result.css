@@ -10,12 +10,11 @@
     background-color:#d8d8d8b3;
     background-blend-mode:lighten;
     height: 40Vh;   
-    
 }
 
 .navi h1{
     color: #000;
-    font-size: 7vh;
+    font-size: 2vh;
     font-weight: 400;
     padding-top: 7vh;
     margin-left: 15%;
@@ -23,7 +22,7 @@
 }
 .lead1{
     color: #000;
-    font-size: 2.5vh;
+    font-size: 1.5vh;
     font-weight: normal;
     padding-top: 5vh;
     margin-left: 15%;
@@ -31,26 +30,17 @@
 .lead2{
     color: #000;
     font-weight: normal;
-    font-size: 2.5vh;
+    font-size: 1.5vh;
     padding-top: 10px;
     padding-bottom: 5vh;
     margin-left: 15%;
-    
 }
 
 
-.main{
-    background-color: rgb(245, 245, 255);
+.main {
     padding-top: 5vh;
     height: 100%;
-    
 }
-.main h2{
-    margin-left: 15%;
-    margin-right: 15%;
-    font-weight: 400;
-}
-
 
 .cont_outside{
     position: relative;
