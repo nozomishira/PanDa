@@ -37,10 +37,10 @@ function proc(){ //画面遷移と同時に開始
             $(document).ready(function () {
                 $("#button1").on("click", () => {
                     let database=[];
-                    const atmosphere = $("#atmosphere").val();
-                    const corresponds = $("#corresponds").val();
-                    const comprehensibility = $("#comprehensibility").val();
-                    const effect = $("#effect").val();
+                    const atmosphere = Number($("#atmosphere").val());
+                    const corresponds = Number($("#corresponds").val());
+                    const comprehensibility = Number($("#comprehensibility").val());
+                    const effect = Number($("#effect").val());
                     const comment =$("#comment").val();
 
                     console.log(atmosphere);

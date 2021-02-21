@@ -55,11 +55,18 @@ function proc() { //画面遷移と同時に開始
         let important = val[9];//data1[2];
         let Name = val[0];//data1[3];
         let hospital = val[1];//data1[4]; 
+<<<<<<< HEAD
         let sex = val[2];//data1[5];
         let age = val[3];//Number(data1[6]);
         let Place = val[6];//data1[7];
         let comment = val[8];//data1[8];
 
+=======
+        let sex = val[2] ;//data1[5];
+        let age = Number(val[3]) ;//Number(data1[6]);
+        let Place = val[6] ;//data1[7];
+        let comment = val[8] ;//data1[8];
+>>>>>>> master
 
         db.collection("evaluation").get().then((querySnapshot) => {
             const evaluations = querySnapshot.docs.map((doc) => doc.data());
@@ -68,6 +75,7 @@ function proc() { //画面遷移と同時に開始
                 const filteredEvaluations = evaluations
                     .map(x => ({
                         ...x,
+<<<<<<< HEAD
                         score: (x.atmosphere * 2) + x.corresponds + x.comprehensibility + x.effect
                     }))
                     .map((x, i, arr) => {
@@ -91,6 +99,23 @@ function proc() { //画面遷移と同時に開始
                             self.findIndex(y => x.Name === y.Name) === i
                     )
                     .sort((a, b) => a.avgScore > b.avgScore ? 1 : -1);
+=======
+                        avgScore,
+                    });
+                })
+                .filter(x => x.expert === expert)
+                .filter(x => sex ? x.Sex === sex : true)
+                .filter(x => age ? (( 10 * age <= Number(x.Age) ) &&( Number(x.Age) < 10 * ( age + 1 ) )) : true)
+                .filter(x => Name ? x.Name === Name : true)
+                .filter(x => hospital ? x.Hospital === hospital : true)
+                .filter(x => Place ? x.Place === Place : true)
+                .filter(x => comment ? x.comment === comment : true)
+                .filter(
+                    (x, i, self) =>
+                      self.findIndex(y => x.Name === y.Name) === i
+                )
+                .sort((a, b) => a.avgScore > b.avgScore ? -1 : 1);
+>>>>>>> master
 
                 console.log(filteredEvaluations);
                 console.log(filteredEvaluations.length);
@@ -180,6 +205,7 @@ function proc() { //画面遷移と同時に開始
                 const filteredEvaluations = evaluations
                     .map(x => ({
                         ...x,
+<<<<<<< HEAD
                         score: (x.atmosphere * 2) + x.corresponds + x.comprehensibility + x.effect
                     }))
                     .map((x, i, arr) => {
@@ -203,6 +229,24 @@ function proc() { //画面遷移と同時に開始
                             self.findIndex(y => x.Name === y.Name) === i
                     )
                     .sort((a, b) => a.avgScore > b.avgScore ? 1 : -1);
+=======
+                        avgScore,
+                    });
+                })
+                .filter(x => x.expert === expert)
+                .filter(x => sex ? x.Sex === sex : true)
+                // .filter(x => age ? ((10*age<= Number(x.Age))&&(Number(x.Age)< 10* (age+1))) : true)
+                .filter(x => age ? (( 10 * age <= x.Age ) &&( x.Age < 10 * ( age + 1 ) )) : true)
+                .filter(x => Name ? x.Name === Name : true)
+                .filter(x => hospital ? x.Hospital === hospital : true)
+                .filter(x => Place ? x.Place === Place : true)
+                .filter(x => comment ? x.comment === comment : true)
+                .filter(
+                    (x, i, self) =>
+                      self.findIndex(y => x.Name === y.Name) === i
+                )
+                .sort((a, b) => a.avgScore > b.avgScore ? -1 : 1);
+>>>>>>> master
 
                 console.log(filteredEvaluations);
                 console.log("important==2");
@@ -290,6 +334,7 @@ function proc() { //画面遷移と同時に開始
                 const filteredEvaluations = evaluations
                     .map(x => ({
                         ...x,
+<<<<<<< HEAD
                         score: (x.atmosphere * 2) + x.corresponds + x.comprehensibility + x.effect
                     }))
                     .map((x, i, arr) => {
@@ -313,6 +358,24 @@ function proc() { //画面遷移と同時に開始
                             self.findIndex(y => x.Name === y.Name) === i
                     )
                     .sort((a, b) => a.avgScore > b.avgScore ? 1 : -1);
+=======
+                        avgScore,
+                    });
+                })
+                .filter(x => x.expert === expert)
+                .filter(x => sex ? x.Sex === sex : true)
+                // .filter(x => age ? ((10*age<= Number(x.Age))&&(Number(x.Age)< 10* (age+1))) : true)
+                .filter(x => age ? (( 10 * age <= x.Age ) &&( x.Age < 10 * ( age + 1 ) )) : true)
+                .filter(x => Name ? x.Name === Name : true)
+                .filter(x => hospital ? x.Hospital === hospital : true)
+                .filter(x => Place ? x.Place === Place : true)
+                .filter(x => comment ? x.comment === comment : true)
+                .filter(
+                    (x, i, self) =>
+                      self.findIndex(y => x.Name === y.Name) === i
+                )
+                .sort((a, b) => a.avgScore > b.avgScore ? -1 : 1);
+>>>>>>> master
 
                 console.log(filteredEvaluations);
 
@@ -399,6 +462,7 @@ function proc() { //画面遷移と同時に開始
                 const filteredEvaluations = evaluations
                     .map(x => ({
                         ...x,
+<<<<<<< HEAD
                         score: (x.atmosphere * 2) + x.corresponds + x.comprehensibility + x.effect
                     }))
                     .map((x, i, arr) => {
@@ -422,6 +486,24 @@ function proc() { //画面遷移と同時に開始
                             self.findIndex(y => x.Name === y.Name) === i
                     )
                     .sort((a, b) => a.avgScore > b.avgScore ? 1 : -1);
+=======
+                        avgScore,
+                    });
+                })
+                .filter(x => x.expert === expert)
+                .filter(x => sex ? x.Sex === sex : true)
+                // .filter(x => age ? ((10*age<= Number(x.Age))&&(Number(x.Age)< 10* (age+1))) : true)
+                .filter(x => age ? (( 10 * age <= x.Age ) &&( x.Age < 10 * ( age + 1 ) )) : true)
+                .filter(x => Name ? x.Name === Name : true)
+                .filter(x => hospital ? x.Hospital === hospital : true)
+                .filter(x => Place ? x.Place === Place : true)
+                .filter(x => comment ? x.comment === comment : true)
+                .filter(
+                    (x, i, self) =>
+                      self.findIndex(y => x.Name === y.Name) === i
+                )
+                .sort((a, b) => a.avgScore > b.avgScore ? -1 : 1);
+>>>>>>> master
 
                 console.log(filteredEvaluations);
 
