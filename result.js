@@ -179,7 +179,7 @@ function proc(){ //画面遷移と同時に開始
                 const filteredEvaluations = evaluations
                 .map(x => ({
                     ...x,
-                    score: (x.atmosphere * 2) + x.corresponds + x.comprehensibility + x.effect
+                    score: x.atmosphere  + (x.corresponds *2) + x.comprehensibility + x.effect
                 }))
                 .map((x, i, arr) => {
                     const scores = arr.filter(y => y.Name === x.Name).map(x => x.score);
@@ -288,7 +288,7 @@ function proc(){ //画面遷移と同時に開始
                 const filteredEvaluations = evaluations
                 .map(x => ({
                     ...x,
-                    score: (x.atmosphere * 2) + x.corresponds + x.comprehensibility + x.effect
+                    score: x.atmosphere  + x.corresponds + (x.comprehensibility*2) + x.effect
                 }))
                 .map((x, i, arr) => {
                     const scores = arr.filter(y => y.Name === x.Name).map(x => x.score);
@@ -396,7 +396,7 @@ function proc(){ //画面遷移と同時に開始
                 const filteredEvaluations = evaluations
                 .map(x => ({
                     ...x,
-                    score: (x.atmosphere * 2) + x.corresponds + x.comprehensibility + x.effect
+                    score: x.atmosphere + x.corresponds + x.comprehensibility + (x.effect *2)
                 }))
                 .map((x, i, arr) => {
                     const scores = arr.filter(y => y.Name === x.Name).map(x => x.score);
